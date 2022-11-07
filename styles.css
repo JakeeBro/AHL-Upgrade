@@ -1,3 +1,65 @@
+:root {
+    --primary-color: white;
+    --secondary-color: black;
+}
+
+[data-theme="dark"] {
+    --primary-color: black;
+    --secondary-color: white;
+}
+
+.check-container {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font-size: 4rem;
+}
+
+.check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 3rem;
+    background-color: #eee;
+}
+
+.check-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.check-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.check-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.check-container .checkmark:after {
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -7,20 +69,48 @@ body {
 h1 {
     margin: 0;
     padding: 0;
+    color: var(--secondary-color);
 }
 
-#main {
+#main, #theme-div {
     margin: 20px;
     padding: 10px;
     width: 400px;
     height: fit-content;
     box-sizing: border-box;
-    border: 2px solid black;
+    border: 2px solid;
+    border-color: var(--secondary-color);
     border-radius: 10px;
+}
+
+#theme-div {
+    margin: 0 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 label {
     display: block;
+}
+
+#theme-label, #theme-switcher {
+    display: inline-block;
+}
+
+#theme-label {
+    margin: 0 auto 0 0;
+    padding: 0;
+    color: var(--secondary-color);
+}
+
+#theme-switcher {
+    margin: 0 0 0 auto;
+    padding: 0;
+    width: 5%;
+    height: auto;
+    border: 6px solid var(--secondary-color);
+    border-radius: 20px;
 }
 
 .input-div {
@@ -35,13 +125,16 @@ input {
     width: 65%;
     height: 30px;
     font-size: 1.25em;
-    border: 2px solid black;
+    color: var(--secondary-color);
+    border: 2px solid;
+    border-color: var(--secondary-color);
     border-radius: 5px;
 }
 
 input:disabled {
-    background-color: white;
-    border: 6px solid black;
+    background-color: var(--primary-color);
+    border: 6px solid;
+    border-color: var(--secondary-color);
 }
 
 button {
@@ -49,24 +142,24 @@ button {
     margin: 0;
     width: 35%;
     height: 30px;
-    color: black;
+    color: var(--secondary-color);
     font-weight: bold;
-    background-color: white;
-    border: 2px solid black;
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
     border-radius: 5px;
     font-size: 1.25em;
 }
 
 button:hover {
-    color: white;
-    background-color: black;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     cursor: pointer;
 }
 
 button:disabled {
     cursor: default;
-    color: black;
-    background-color: white;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 .hide {
@@ -81,18 +174,23 @@ button:disabled {
     color: red;
 }
 
-#description, #feedback, #amount, #list, #message, label {
+#description, #feedback, #amount, #list, label {
+    margin: 10px 0 0 0;
+    color: var(--secondary-color);
+}
+
+#message {
     margin: 10px 0 0 0;
 }
 
 #reset {
     margin: 10px 0 0 0;
     width: 100%;
-    color: black;
+    color: var(--secondary-color);
 }
 
 #reset:hover {
-    color: white;
+    color: var(--primary-color);
 }
 
 @media screen and (max-width: 992px) {
@@ -108,11 +206,23 @@ button:disabled {
         font-size: 4rem;
     }
 
-    #main {
+    #main, #theme-div {
         margin: 0;
         width: 100%;
-        border: 8px solid black;
+        border: 8px solid var(--secondary-color);
         border-radius: 20px;
+    }
+
+    #theme-div {
+        margin: 0 0 10px 0;
+    }
+
+    #theme-label {
+        font-size: 3rem;
+    }
+
+    #theme-switcher {
+        border: 6px solid var(--secondary-color);
     }
 
     .input-div {
@@ -128,7 +238,8 @@ button:disabled {
         width: 100%;
         height: 8rem;
         font-size: 4em;
-        border: 6px solid black;
+        border: 6px solid;
+        border-collapse: var(--secondary-color);
         border-radius: 20px;
     }
 
@@ -136,7 +247,8 @@ button:disabled {
         width: 100%;
         height: 8rem;
         font-size: 4rem;
-        border: 6px solid black;
+        border: 6px solid;
+        border-color: var(--secondary-color);
         border-radius: 20px;
     }
 
