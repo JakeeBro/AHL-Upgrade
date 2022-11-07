@@ -27,7 +27,7 @@ let list = document.getElementById('list');
 let message = document.getElementById('message');
 let reset = document.getElementById('reset');
 
-description.innerHTML = `Guess a Number between ${st(1)} and ${st(maxValue)}`;
+description.innerHTML = `Guess a Number between<br>${st(1)} and ${st(maxValue)}`;
 let answer = Math.floor(Math.random() * maxValue) + 1;
 
 let guess;

@@ -92,6 +92,14 @@ button:disabled {
         padding: 5px;
     }
 
+    h1 {
+        font-size: 4em;
+    }
+
+    #description, #feedback, #amount, #list, #message, label {
+        font-size: 2em;
+    }
+
     #main {
         margin: 0;
         width: 100%;
@@ -105,9 +113,12 @@ button:disabled {
 
     input {
         margin-right: 5px;
+        height: 2em;
+        font-size: 2em;
     }
 
     button {
         margin-left: 5px;
+        height: 2em;
     }
 }
