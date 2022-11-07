@@ -1,2 +1,2 @@
-# AHL-Upgrade(https://jakeebro.github.io/AHL-Upgrade)
+## [AHL-Upgrade](https://jakeebro.github.io/AHL-Upgrade)
  
