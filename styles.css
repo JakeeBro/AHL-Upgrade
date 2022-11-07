@@ -41,6 +41,7 @@ input {
 
 input:disabled {
     background-color: white;
+    border: 6px solid black;
 }
 
 button {
@@ -48,6 +49,8 @@ button {
     margin: 0;
     width: 35%;
     height: 30px;
+    color: black;
+    font-weight: bold;
     background-color: white;
     border: 2px solid black;
     border-radius: 5px;
@@ -85,6 +88,11 @@ button:disabled {
 #reset {
     margin: 10px 0 0 0;
     width: 100%;
+    color: black;
+}
+
+#reset:hover {
+    color: white;
 }
 
 @media screen and (max-width: 992px) {
@@ -130,5 +138,9 @@ button:disabled {
         font-size: 4rem;
         border: 6px solid black;
         border-radius: 20px;
+    }
+
+    .hide {
+        display: none;
     }
 }
