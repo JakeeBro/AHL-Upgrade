@@ -155,7 +155,7 @@ function resetGame() {
         }
     }
 
-    description.innerHTML = `Guess a Number between ${st(1)} and ${st(maxValue)}`;
+    description.innerHTML = `Guess a Number <br>between ${st(1)} and ${st(maxValue)}`;
     answer = Math.floor(Math.random() * maxValue) + 1;
 
     guess = 0;
